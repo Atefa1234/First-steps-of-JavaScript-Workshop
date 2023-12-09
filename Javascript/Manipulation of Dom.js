@@ -23,10 +23,9 @@ function showNumbers(){
 }
 showNumbers()
 
-//Making a form
 var form = document.createElement('form');
 
-// Create form inputs
+
 var inputName = document.createElement('input');
 inputName.type = 'text';
 inputName.name = 'userName';
@@ -37,17 +36,17 @@ inputEmail.type = 'email';
 inputEmail.name = 'userEmail';
 inputEmail.placeholder = 'Email';
 
-// Create submit button
+
 var buttonSubmit = document.createElement('input');
 buttonSubmit.type = 'submit';
 buttonSubmit.value = 'Submit';
 
-// Add elements to form
+
 form.appendChild(inputName);
 form.appendChild(inputEmail);
 form.appendChild(buttonSubmit);
 
-// Append form to the DOM
+
 document.body.appendChild(form);
 
 
@@ -62,31 +61,29 @@ var tableData = [
   // Create a table element
   var table = document.createElement("table");
 
-  // Create a table header (thead) and table body (tbody)
   var thead = document.createElement("thead");
   var tbody = document.createElement("tbody");
 
-  // Iterate through the data array to create table rows and cells
+
   for (var i = 0; i < tableData.length; i++) {
     var row = document.createElement("tr");
 
     for (var j = 0; j < tableData[i].length; j++) {
-      var cell = document.createElement(i === 0 ? "th" : "td"); // Use th for headers, td for data cells
+      var cell = document.createElement(i === 0 ? "th" : "td"); 
       var cellText = document.createTextNode(tableData[i][j]);
 
       cell.appendChild(cellText);
       row.appendChild(cell);
     }
 
-    // Append the row to the appropriate section (thead or tbody)
     i === 0 ? thead.appendChild(row) : tbody.appendChild(row);
   }
 
-  // Append the header and body to the table
+ 
   table.appendChild(thead);
   table.appendChild(tbody);
 
-  // Append the table to the body
+ 
   document.body.appendChild(table);
 
 
