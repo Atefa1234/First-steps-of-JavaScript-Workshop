@@ -88,3 +88,57 @@ var tableData = [
 
   // Append the table to the body
   document.body.appendChild(table);
+
+
+  //the last part of manipulation dom
+  var Coders = [
+    {
+      id: 1,
+      name: "Atefa",
+      status: "Alive",
+      species: "Human",
+      type: "Femcoder",
+      gender: "female"
+    },
+    {
+      id: 2,
+      name: "Helena",
+      status: "Alive",
+      species: "Human",
+      type: "Femcoder",
+      gender: "female"
+    },
+    {
+      id: 3,
+      name: "Deisire",
+      status: "Alive",
+      species: "Human",
+      type: "Femcoder",
+      gender: "Female"
+    },
+  ];
+  console.log(Coders);
+//ADD THE ARRAY ELEMENT INTO THE TABLE
+
+  var table = document.createElement("table");
+  var thead = document.createElement("thead");
+  var tbody = document.createElement("tbody");
+  var headerRow = document.createElement("tr");
+  for (var key in Coders[0]) {
+    var th = document.createElement("th");
+    th.appendChild(document.createTextNode(key));
+    headerRow.appendChild(th);
+  }
+  thead.appendChild(headerRow);
+  table.appendChild(thead);
+  for (var i = 0; i < Coders.length; i++) {
+    var row = document.createElement("tr");
+    for (var key in Coders[i]) {
+      var cell = document.createElement("td");
+      cell.appendChild(document.createTextNode(Coders[i][key]));
+      row.appendChild(cell);
+    }
+    tbody.appendChild(row);
+  }
+  table.appendChild(tbody);
+  document.body.appendChild(table);
